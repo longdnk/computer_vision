@@ -17,9 +17,42 @@
 # cap.set(4, frameHeight)
 # while True:
 #     success, img = cap.read()
+#     print(img)
 #     img = cv2.resize(img, (frameWidth, frameHeight))
 #     cv2.imshow('Video', img)
+# cap.release()
+# cv2.destroyAllWindows()
+
+
+# import cv2
 #
+# # cnt = 0
+#
+# # define a video capture object
+# cap = cv2.VideoCapture('data/traffic.mp4')
+#
+# while True:
+#
+#     # Capture the video frame
+#     # by frame
+#     check, img = cap.read()
+#     # cnt += 1
+#     # if cnt % 10 == 0:
+#     #     print(img)
+#
+#     # Display the resulting frame
+#     cv2.imshow('frame', img)
+#
+#     # the 'q' button is set as the
+#     # quitting button you may use any
+#     # desired button of your choice
+#     if cv2.waitKey(1) & 0xFF == ord('q'):
+#         break
+#
+# # After the loop release the cap object
+# cap.release()
+# # Destroy all the windows
+# cv2.destroyAllWindows()
 
 
 # EROSION/DILATION display and show with kernel
@@ -153,16 +186,3 @@
 #     return vertical
 #
 # kernel = np.ones((5, 5), np.uint8)
-#
-# path = 'data/item.jpg'
-# img = cv2.imread(path)
-# imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-# imgBlur = cv2.GaussianBlur(imgGray, (7, 7), 0)
-# imgCanny = cv2.Canny(imgBlur, 100, 200)
-# imgDilation = cv2.dilate(imgCanny, kernel, iterations=1)
-# imgErosion = cv2.erode(imgDilation, kernel, iterations=1)
-#
-# stackImages = stackImages(0.5, ([img, imgGray, imgBlur], [imgCanny, imgDilation, imgErosion]))
-# cv2.imshow('Stacked', stackImages)
-#
-# cv2.waitKey(0)

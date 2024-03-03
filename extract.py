@@ -1,7 +1,7 @@
-import cv2
+import cv2  
 import numpy as np
 
-circles = np.zeros((4, 2), np.int)
+circles = np.zeros((4, 2), np.int32)
 counter = 0
 
 
